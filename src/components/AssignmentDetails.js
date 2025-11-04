@@ -66,7 +66,7 @@ export default function AssignmentDetails({assignment,courses,userRole,userId,on
       </button>
 
       <div className="mb-6">
-        <h1 className="text-3xl font-bold mb-2">{assignment.title}</h1>
+        <h1 className="text-3xl font-bold mb-2 text-black">{assignment.title}</h1>
         <p className="text-gray-600 mb-4">{assignment.description}</p>
 
         <div className="grid grid-cols-2 gap-4 bg-gray-50 p-4 rounded">
@@ -91,7 +91,7 @@ export default function AssignmentDetails({assignment,courses,userRole,userId,on
 
       {userRole === 'professor' && (
         <div className="bg-blue-50 p-4 rounded">
-          <h3 className="font-bold mb-2">Submission Analytics</h3>
+          <h3 className="font-bold mb-2 text-black">Submission Analytics</h3>
           <p className="text-gray-700">{submissionCount} of {totalStudentsInCourse} acknowledged</p>
           <div className="w-full bg-gray-300 rounded h-2 mt-2">
             <div className="bg-green-500 h-2 rounded" style={{ width: `${progressPct}%` }}></div>
@@ -144,7 +144,7 @@ function GroupSubmission({ userGroup, isGroupLeader, acknowledged, onAcknowledge
   return (
     <div className="space-y-4">
       <div className="bg-blue-50 p-4 rounded border border-blue-300">
-        <h3 className="font-bold mb-2">Your Group: {userGroup.name}</h3>
+        <h3 className="font-bold mb-2 text-black">Your Group: {userGroup.name}</h3>
         <p className="text-gray-700 text-sm mb-2">Members:</p>
         <ul className="list-disc list-inside text-gray-700 text-sm">
           {userGroup.members.map(memberId => (

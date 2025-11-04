@@ -71,7 +71,7 @@ export default function StudentDashboard({userId}){
       </div>
 
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-semibold">Your Courses</h2>
+        <h2 className="text-xl font-semibold text-black">Your Courses</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

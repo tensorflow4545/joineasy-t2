@@ -28,7 +28,7 @@ export default function Assignment({courseId,userRole,userId}){
     <div className="p-6 bg-white rounded-lg shadow">
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h2 className="text-2xl font-bold">{course.name}</h2>
+          <h2 className="text-2xl font-bold text-black">{course.name}</h2>
           <p className="text-gray-600">{course.code}</p>
         </div>
         {userRole === 'professor' && (
@@ -55,7 +55,7 @@ export default function Assignment({courseId,userRole,userId}){
               onClick={() => setSelectedAssignment(assignment)}
               className="p-4 border border-gray-300 rounded hover:shadow-lg cursor-pointer transition"
             >
-              <h3 className="font-bold text-lg">{assignment.title}</h3>
+              <h3 className="font-bold text-lg text-black">{assignment.title}</h3>
               <p className="text-gray-600 text-sm">{assignment.description}</p>
               <div className="flex justify-between mt-2 text-sm">
                 <span className="text-gray-700">Deadline: {assignment.deadline}</span>
