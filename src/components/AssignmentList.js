@@ -6,7 +6,7 @@ import { getAssignments,saveAssignments,getSubmissions } from "@/lib/storage";
 import AssignmentDetails from "./AssignmentDetails";
 import { ArrowLeft } from 'lucide-react';
 export default function AssignmentList({courseId,userRole,userId,onBack}){
-  const [selectedAssignment,setselectedAssignment]=useState(null);
+  const [selectedAssignment,setSelectedAssignment]=useState(null);
   const [showCreateForm,setShowCreateForm]=useState(false);
   const [assignments,setAssignments]=useState([]);
   const [submissions,setSubmissions]=useState({});
@@ -26,7 +26,7 @@ export default function AssignmentList({courseId,userRole,userId,onBack}){
             course={course}
             userRole={userRole}
             userId={userId}
-            onBack={()=>setselectedAssignment(null)}
+            onBack={()=>setSelectedAssignment(null)}
         />
     )
   }
@@ -37,16 +37,17 @@ export default function AssignmentList({courseId,userRole,userId,onBack}){
     const newAssignment={
      id:nextId,
      courseId,
-     title:data.tite,
+     title:data.title,
      description:data.description,
      deadline:data.deadline,
-     onDriveLink:data.oneDriveLink,
+     oneDriveLink:data.oneDriveLink,
+     submissionType:data.submissionType,
      createdBy:userId
     };
 
     const updated=[...allAssignment,newAssignment];
     saveAssignments(updated);
-    setAssignments(updated.filtere(a=>a.courseId===courseId));
+    setAssignments(updated.filter(a=>a.courseId===courseId));
     setShowCreateForm(false);
   };
 

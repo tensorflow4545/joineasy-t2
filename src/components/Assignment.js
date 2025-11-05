@@ -19,7 +19,7 @@ export default function Assignment({courseId,userRole,userId}){
             course={course}
             userRole={userRole}
             userId={userId}
-            onBack={()=>selectedAssignment(false)}
+            onBack={()=>setSelectedAssignment(null)}
         />
     )
   }

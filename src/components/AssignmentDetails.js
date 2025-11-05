@@ -2,18 +2,18 @@
 
 import { useState,useEffect } from "react";
 import { mockGroups,mockUsers } from "@/lib/mockData";
-import { getSubmissions,setAcknowledgement } from "@/lib/storage";
+import { getSubmissions, saveSubmissions } from "@/lib/storage";
 
-export default function AssignmentDetails({assignment,courses,userRole,userId,onBack}){
+export default function AssignmentDetails({assignment,course,userRole,userId,onBack}){
    const [submissions,setSubmissions]=useState({});
-   const [acknowledged,setAcknnowledged]=useState(false);
+   const [acknowledged,setAcknowledged]=useState(false);
 
 
    useEffect(()=>{
      const stored=getSubmissions();
      setSubmissions(stored);
      const ack=Boolean(stored?.[assignment.id]?.[userId]?.acknowledged);
-     setAcknnowledged(ack);
+     setAcknowledged(ack);
    },[assignment.id,userId]);
 
 
@@ -21,15 +21,15 @@ export default function AssignmentDetails({assignment,courses,userRole,userId,on
   const isGroupLeader=userGroup?.leaderId===userId;
 
   const submissionCount=(()=>{
-    const map=submissions?.[assignmentId]||{};
+    const map=submissions?.[assignment.id]||{};
     return Object.values(map).filter(v=>v?.acknowledged).length;
   })();
 
-  const totaStudentInCourse=mockUsers.filter(
+  const totalStudentsInCourse=mockUsers.filter(
     u=>u.role==='student' && (u.enrolledCourses|| []).includes(course.id)
   ).length;
 
-  const progreesPct=totaStudentInCourse>0?Math.min(100,Math.round((submissionCount/totaStudentInCourse)*100)):0;
+  const progressPct=totalStudentsInCourse>0?Math.min(100,Math.round((submissionCount/totalStudentsInCourse)*100)):0;
 
   const handleAcknowledge = () => {
     const current = getSubmissions();
