@@ -48,7 +48,7 @@ export default function StudentDashboard({userId}){
           <div className="flex items-center justify-between">
             <div>
               <p className="text-black text-sm">Your courses</p>
-              <p className="text-2xl font-bold">{enrolledCourses.length}</p>
+              <p className="text-2xl font-bold text-black">{enrolledCourses.length}</p>
             </div>
             <BookOpen className="w-10 h-10 text-orange-600" />
           </div>
@@ -57,7 +57,7 @@ export default function StudentDashboard({userId}){
           <div className="flex items-center justify-between">
             <div>
               <p className="text-black text-sm">Assignments</p>
-              <p className="text-2xl font-bold">{totalAssignmentsAcrossCourses}</p>
+              <p className="text-2xl font-bold text-black">{totalAssignmentsAcrossCourses}</p>
             </div>
             <ClipboardList className="w-10 h-10 text-orange-600" />
           </div>

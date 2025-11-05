@@ -59,7 +59,7 @@ export default function AdminDashboard({ userId }) {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-black text-sm">Courses teaching</p>
-              <p className="text-2xl font-bold">{teachingCourses.length}</p>
+              <p className="text-2xl font-bold text-black">{teachingCourses.length}</p>
             </div>
             <BookOpen className="w-10 h-10 text-orange-600" />
           </div>
@@ -68,7 +68,7 @@ export default function AdminDashboard({ userId }) {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-black text-sm">Total assignments</p>
-              <p className="text-2xl font-bold">{totalAssignmentsForTeaching}</p>
+              <p className="text-2xl font-bold text-black">{totalAssignmentsForTeaching}</p>
             </div>
             <ClipboardList className="w-10 h-10 text-orange-600" />
           </div>
