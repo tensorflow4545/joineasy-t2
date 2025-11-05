@@ -29,12 +29,12 @@ export default function Assignment({courseId,userRole,userId}){
       <div className="flex justify-between items-center mb-6">
         <div>
           <h2 className="text-2xl font-bold text-black">{course.name}</h2>
-          <p className="text-gray-600">{course.code}</p>
+          <p className="text-black">{course.code}</p>
         </div>
         {userRole === 'professor' && (
           <button
             onClick={() => setShowCreateForm(!showCreateForm)}
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            className="bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700"
           >
             {showCreateForm ? 'Cancel' : 'Create Assignment'}
           </button>
@@ -46,7 +46,7 @@ export default function Assignment({courseId,userRole,userId}){
       )}
 
       {assignments.length === 0 ? (
-        <p className="text-gray-500">No assignments yet</p>
+        <p className="text-black">No assignments yet</p>
       ) : (
         <div className="space-y-4">
           {assignments.map(assignment => (
@@ -56,10 +56,10 @@ export default function Assignment({courseId,userRole,userId}){
               className="p-4 border border-gray-300 rounded hover:shadow-lg cursor-pointer transition"
             >
               <h3 className="font-bold text-lg text-black">{assignment.title}</h3>
-              <p className="text-gray-600 text-sm">{assignment.description}</p>
+              <p className="text-black text-sm">{assignment.description}</p>
               <div className="flex justify-between mt-2 text-sm">
-                <span className="text-gray-700">Deadline: {assignment.deadline}</span>
-                <span className={`px-2 py-1 rounded text-white ${assignment.submissionType === 'individual' ? 'bg-green-500' : 'bg-blue-500'}`}>
+                <span className="text-black">Deadline: {assignment.deadline}</span>
+                <span className={`px-2 py-1 rounded text-white ${assignment.submissionType === 'individual' ? 'bg-green-500' : 'bg-orange-500'}`}>
                   {assignment.submissionType === 'individual' ? 'Individual' : 'Group'}
                 </span>
               </div>

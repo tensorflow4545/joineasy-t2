@@ -29,7 +29,7 @@ export default function StudentDashboard({userId}){
 
   return (
     <div className="p-6 space-y-6">
-      <div className="rounded-2xl bg-linear-to-r from-indigo-600 to-blue-600 text-white p-6 flex items-center justify-between">
+      <div className="rounded-2xl bg-linear-to-r from-orange-500 to-amber-600 text-white p-6 flex items-center justify-between">
         <div>
           <div className="flex items-center gap-3">
             <GraduationCap className="w-8 h-8" />
@@ -39,7 +39,7 @@ export default function StudentDashboard({userId}){
         </div>
         <div className="hidden md:flex items-center gap-3 bg-white/10 backdrop-blur px-4 py-2 rounded-lg">
           <span className="text-sm">Enrolled</span>
-          <span className="px-2 py-1 text-xs bg-white text-indigo-700 rounded">{enrolledCourses.length} courses</span>
+          <span className="px-2 py-1 text-xs bg-white text-orange-700 rounded">{enrolledCourses.length} courses</span>
         </div>
       </div>
 
@@ -47,25 +47,25 @@ export default function StudentDashboard({userId}){
         <div className="bg-white rounded-xl shadow p-5 border border-gray-100">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-500 text-sm">Your courses</p>
+              <p className="text-black text-sm">Your courses</p>
               <p className="text-2xl font-bold">{enrolledCourses.length}</p>
             </div>
-            <BookOpen className="w-10 h-10 text-indigo-600" />
+            <BookOpen className="w-10 h-10 text-orange-600" />
           </div>
         </div>
         <div className="bg-white rounded-xl shadow p-5 border border-gray-100">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-500 text-sm">Assignments</p>
+              <p className="text-black text-sm">Assignments</p>
               <p className="text-2xl font-bold">{totalAssignmentsAcrossCourses}</p>
             </div>
-            <ClipboardList className="w-10 h-10 text-indigo-600" />
+            <ClipboardList className="w-10 h-10 text-orange-600" />
           </div>
         </div>
         <div className="bg-white rounded-xl shadow p-5 border border-gray-100">
           <div>
-            <p className="text-gray-500 text-sm">Tip</p>
-            <p className="text-sm mt-1 text-gray-700">Click a course to view assignments.</p>
+            <p className="text-black text-sm">Tip</p>
+            <p className="text-sm mt-1 text-black">Click a course to view assignments.</p>
           </div>
         </div>
       </div>
@@ -78,21 +78,21 @@ export default function StudentDashboard({userId}){
         {enrolledCourses.map(course => (
           <div
             key={course.id}
-            className="group bg-white p-6 rounded-xl border border-gray-200 hover:border-indigo-300 shadow-sm hover:shadow-md transition cursor-pointer"
+            className="group bg-white p-6 rounded-xl border border-gray-200 hover:border-orange-300 shadow-sm hover:shadow-md transition cursor-pointer"
             onClick={() => setSelectedCourse(course.id)}
           >
             <div className="flex items-start justify-between">
               <div>
-                <h3 className="font-semibold text-lg text-gray-900">{course.name}</h3>
-                <p className="text-gray-500 text-sm">{course.code} • {course.professor}</p>
+                <h3 className="font-semibold text-lg text-black">{course.name}</h3>
+                <p className="text-black text-sm">{course.code} • {course.professor}</p>
               </div>
-              <BookOpen className="w-6 h-6 text-indigo-600" />
+              <BookOpen className="w-6 h-6 text-orange-600" />
             </div>
-            <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
+            <div className="mt-4 flex items-center justify-between text-sm text-black">
               <span>
                 {allAssignments.filter(a => a.courseId === course.id).length} assignments
               </span>
-              <button className="px-3 py-1.5 bg-indigo-600 text-white rounded-md group-hover:bg-indigo-700">
+              <button className="px-3 py-1.5 bg-orange-600 text-white rounded-md group-hover:bg-orange-700">
                 View
               </button>
             </div>

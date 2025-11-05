@@ -60,29 +60,29 @@ export default function AssignmentDetails({assignment,courses,userRole,userId,on
     <div className="p-6 bg-white rounded-lg shadow">
       <button
         onClick={onBack}
-        className="text-blue-600 hover:underline mb-4"
+        className="text-orange-600 hover:underline mb-4"
       >
         ← Back to Assignments
       </button>
 
       <div className="mb-6">
         <h1 className="text-3xl font-bold mb-2 text-black">{assignment.title}</h1>
-        <p className="text-gray-600 mb-4">{assignment.description}</p>
+        <p className="text-black mb-4">{assignment.description}</p>
 
         <div className="grid grid-cols-2 gap-4 bg-gray-50 p-4 rounded">
           <div>
-            <p className="text-gray-700 font-semibold">Deadline</p>
+            <p className="text-black font-semibold">Deadline</p>
             <p className="text-lg">{assignment.deadline}</p>
           </div>
           <div>
-            <p className="text-gray-700 font-semibold">Submission Type</p>
+            <p className="text-black font-semibold">Submission Type</p>
             <p className="text-lg">
               {assignment.submissionType === 'individual' ? 'Individual' : 'Group'}
             </p>
           </div>
           <div>
-            <p className="text-gray-700 font-semibold">OneDrive Link</p>
-            <a href={assignment.oneDriveLink} target="_blank" className="text-blue-600 hover:underline">
+            <p className="text-black font-semibold">OneDrive Link</p>
+            <a href={assignment.oneDriveLink} target="_blank" className="text-orange-600 hover:underline">
               Open Link
             </a>
           </div>
@@ -90,9 +90,9 @@ export default function AssignmentDetails({assignment,courses,userRole,userId,on
       </div>
 
       {userRole === 'professor' && (
-        <div className="bg-blue-50 p-4 rounded">
+        <div className="bg-orange-50 p-4 rounded">
           <h3 className="font-bold mb-2 text-black">Submission Analytics</h3>
-          <p className="text-gray-700">{submissionCount} of {totalStudentsInCourse} acknowledged</p>
+          <p className="text-black">{submissionCount} of {totalStudentsInCourse} acknowledged</p>
           <div className="w-full bg-gray-300 rounded h-2 mt-2">
             <div className="bg-green-500 h-2 rounded" style={{ width: `${progressPct}%` }}></div>
           </div>
@@ -143,10 +143,10 @@ function GroupSubmission({ userGroup, isGroupLeader, acknowledged, onAcknowledge
 
   return (
     <div className="space-y-4">
-      <div className="bg-blue-50 p-4 rounded border border-blue-300">
+      <div className="bg-orange-50 p-4 rounded border border-orange-300">
         <h3 className="font-bold mb-2 text-black">Your Group: {userGroup.name}</h3>
-        <p className="text-gray-700 text-sm mb-2">Members:</p>
-        <ul className="list-disc list-inside text-gray-700 text-sm">
+        <p className="text-black text-sm mb-2">Members:</p>
+        <ul className="list-disc list-inside text-black text-sm">
           {userGroup.members.map(memberId => (
             <li key={memberId}>{memberId} {userGroup.leaderId === memberId && '(Leader)'}</li>
           ))}
@@ -168,7 +168,7 @@ function GroupSubmission({ userGroup, isGroupLeader, acknowledged, onAcknowledge
         )
       ) : (
         <div className="bg-gray-50 p-4 rounded border border-gray-300">
-          <p className="text-gray-700 font-semibold">⏳ Waiting for group leader acknowledgment...</p>
+          <p className="text-black font-semibold">⏳ Waiting for group leader acknowledgment...</p>
         </div>
       )}
     </div>

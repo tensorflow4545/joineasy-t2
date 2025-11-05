@@ -6,19 +6,19 @@ export default function Navbar({ user, onLogout, onAddAssignment }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center flex-wrap gap-4">
           <div className="flex items-center gap-3">
-            <BookOpen className="w-8 h-8 text-indigo-600" />
+            <BookOpen className="w-8 h-8 text-orange-600" />
             <div>
-              <h1 className="text-xl font-bold text-gray-800">
+              <h1 className="text-xl font-bold text-black">
                 {user.role === 'admin' ? 'Admin Dashboard' : 'My Assignments'}
               </h1>
-              <p className="text-sm text-gray-600">{user.name}</p>
+              <p className="text-sm text-black">{user.name}</p>
             </div>
           </div>
           <div className="flex gap-2">
             {user.role === 'admin' && onAddAssignment && (
               <button
                 onClick={onAddAssignment}
-                className="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+                className="flex items-center gap-2 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition"
               >
                 <Plus className="w-4 h-4" />
                 <span className="hidden sm:inline">Add Assignment</span>
@@ -26,7 +26,7 @@ export default function Navbar({ user, onLogout, onAddAssignment }) {
             )}
             <button
               onClick={onLogout}
-              className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition"
+              className="flex items-center gap-2 px-4 py-2 text-black hover:bg-gray-100 rounded-lg transition"
             >
               <LogOut className="w-4 h-4" />
               <span className="hidden sm:inline">Logout</span>
