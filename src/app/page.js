@@ -1,14 +1,26 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import LoginPage from '@/components/LoginPage';
 import StudentDashboard from '@/components/StudentDashboard';
 import AdminDashboard from '@/components/AdminDashboard';
 import Navbar from '@/components/Navbar';
-import { clearUser } from '@/lib/storage';
+import { clearUser, getStoredUser, getToken } from '@/lib/storage';
+import { isTokenExpired } from '@/lib/jwt';
 
 export default function Home() {
   const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const storedUser = getStoredUser();
+    const token = getToken();
+    if (storedUser && token && !isTokenExpired(token)) {
+      setUser(storedUser);
+    } else {
+      // ensure stale data is cleared
+      clearUser();
+    }
+  }, []);
 
   if (!user) {
     return <LoginPage onLogin={setUser} />;
