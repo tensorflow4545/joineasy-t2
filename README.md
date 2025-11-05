@@ -56,25 +56,20 @@ npm run lint
 
 ## Screenshots / UI flow
 
-Place images or GIFs under `docs/screenshots/` and reference them here. Suggested flow:
-
 1. Login
-   - `docs/screenshots/01-login.png`
+   <img width="602" height="853" alt="image" src="https://github.com/user-attachments/assets/4bec2bf9-bf25-4c95-b5f8-ec9c596d391e" />
+
 2. Student dashboard
-   - `docs/screenshots/02-student-dashboard.png`
+  <img width="1919" height="908" alt="image" src="https://github.com/user-attachments/assets/b5add94a-0c98-4865-9574-d0b6dc0adf43" />
+
 3. Admin/Professor dashboard
-   - `docs/screenshots/03-admin-dashboard.png`
+   <img width="1913" height="907" alt="image" src="https://github.com/user-attachments/assets/a6d7cd47-e0b2-47bb-8bac-7ad13b0b09e2" />
+
 4. Assignment list
-   - `docs/screenshots/04-assignment-list.png`
+   <img width="1570" height="564" alt="image" src="https://github.com/user-attachments/assets/95caa7b6-0106-4a81-9750-65d61a418e7a" />
+
 5. Assignment details
-   - `docs/screenshots/05-assignment-details.png`
-
-Example embedding:
-
-```markdown
-![Login](docs/screenshots/01-login.png)
-![Student Dashboard](docs/screenshots/02-student-dashboard.png)
-```
+   <img width="1918" height="714" alt="image" src="https://github.com/user-attachments/assets/6f03768c-3270-4518-b326-5c3930b2db3d" />
 
 
 ## Component structure (simplified)
