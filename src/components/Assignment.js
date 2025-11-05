@@ -94,21 +94,21 @@ function CreateAssignmentForm({ courseId, onClose }) {
         placeholder="Title"
         value={formData.title}
         onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-        className="w-full p-2 border rounded"
+        className="w-full p-2 border rounded text-black"
         required
       />
       <textarea
         placeholder="Description"
         value={formData.description}
         onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-        className="w-full p-2 border rounded"
+        className="w-full p-2 border rounded text-black"
         rows="3"
       />
       <input
         type="date"
         value={formData.deadline}
         onChange={(e) => setFormData({ ...formData, deadline: e.target.value })}
-        className="w-full p-2 border rounded"
+        className="w-full p-2 border rounded text-black"
         required
       />
       <input
@@ -116,12 +116,12 @@ function CreateAssignmentForm({ courseId, onClose }) {
         placeholder="OneDrive Link"
         value={formData.oneDriveLink}
         onChange={(e) => setFormData({ ...formData, oneDriveLink: e.target.value })}
-        className="w-full p-2 border rounded"
+        className="w-full p-2 border rounded text-black"
       />
       <select
         value={formData.submissionType}
         onChange={(e) => setFormData({ ...formData, submissionType: e.target.value })}
-        className="w-full p-2 border rounded"
+        className="w-full p-2 border rounded text-black"
       >
         <option value="individual">Individual Submission</option>
         <option value="group">Group Submission</option>
